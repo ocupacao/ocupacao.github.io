@@ -6,7 +6,10 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 18px;
+  font-size: 16px;
+  @include media-query(DESKTOP) {
+    font-size: 18px;
+  }
 }
 
 body {
@@ -61,7 +64,7 @@ a {
 
 .section {
   width: 100%;
-  border-bottom: 2px #444 solid;
+  border-bottom: 4px #444 solid;
   padding: 24px 12px;
 
   .section-title {
@@ -81,13 +84,15 @@ a {
     padding: 8px 16px;
     margin: 0 8px;
     color: #fff;
-    background-color: #000;
+    font-size: 1.5rem;
+    background-color: #222;
+    border: 1px #000 solid;
     border-radius: 10px;
-    box-shadow: 4px 4px 12px #888;
+    box-shadow: 6px 6px 12px #888;
     transition: box-shadow $TRANSITION-PERIOD linear;
 
     &:hover {
-      box-shadow: 2px 2px 12px #888;
+      box-shadow: 3px 3px 12px #888;
     }
   }
 
@@ -107,11 +112,16 @@ a {
     position: relative;
     display: block;
     width: 100%;
-    padding-bottom: 56%;
-    background-image: url('{{ site.baseurl }}/media/images/cover.jpg');
+    padding-bottom: 128%;
+    background-image: url('{{ site.baseurl }}/media/images/title.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    
+    @include media-query(DESKTOP) {
+      background-size: contain;
+      padding-bottom: 50%;
+    }
   }
 
   .title-text {
@@ -126,6 +136,10 @@ a {
       font-size: 60px;
     }
   }
+}
+
+.footer-line + .footer-line {
+  margin-top: 18px;
 }
 
 i.fa-1_5x {
