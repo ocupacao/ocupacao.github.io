@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+    {% include meta.html %}
+  </head>
+  <body>
+    <div class="main-div">
+      {% include title.html %}
+      {% for sec in site.eventos %}
+        {% if sec.path contains page.title %}
+          <section class="section">
+            <div class="section-title">{{ sec.title }}</div>
+            <div class="section-content">{{ sec.content }}</div>
+          </section>
+
+          {% if sec.swipebox %}
+            {% include swipebox.html prefix=sec.swipebox %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      {% include footer.html %}
+    </div>
+  </body>
+</html>

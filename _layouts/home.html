@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+    {% include meta.html %}
+  </head>
+  <body>
+    <div class="main-div">
+      {% include title.html %}
+      {% for sec in site.pagina-inicial %}
+        <section class="section">
+          <div class="section-title">{{ sec.title }}</div>
+          <div class="section-content">{{ sec.content }}</div>
+
+          {% if sec.link %}
+            <div class="button-wrapper">
+            {% for but in sec.link %}
+              <a class="button"  href="{{ but.url }}">{{ but.title }}</a>
+            {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if sec.swipebox %}
+            {% include swipebox.html prefix=sec.swipebox %}
+          {% endif %}
+        </section>
+      {% endfor %}
+      {% include footer.html %}
+    </div>
+  </body>
+</html>

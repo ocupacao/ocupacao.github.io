@@ -1,0 +1,48 @@
+# Site
+title: Ocupação Afro-Futurista
+subtitle: 
+
+# URL
+url: https://ocupacao.github.io
+baseurl: ''
+permalink: :categories/:title/
+include: ['_pages']
+collections:
+  pagina-inicial:
+    output: false
+  eventos:
+    output: false
+
+# Build settings
+markdown: kramdown
+port: 8420
+future: false
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "post"
+
+# Data
+social:
+  facebook: "https://www.facebook.com/"
+  instagram: "https://www.instagram.com/"
+  github: "https://github.com/"
+  twitter: "https://twitter.com/"
+  youtube: "https://youtube.com"
+  vimeo: ""
+  soundcloud: ""
+  tumblr: ""
+  pinterest: ""
+  envelope-o: "mailto:ocupacao@afrofuturista.com"
+twitter_user: "user"
