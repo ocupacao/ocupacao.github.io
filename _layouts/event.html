@@ -12,11 +12,11 @@
           <section class="section">
             <div class="section-title">{{ sec.title }}</div>
             <div class="section-content">{{ sec.content }}</div>
-          </section>
 
-          {% if sec.swipebox %}
-            {% include swipebox.html prefix=sec.swipebox %}
-          {% endif %}
+            {% if sec.swipebox %}
+              {% include swipebox.html prefix=sec.swipebox %}
+            {% endif %}
+          </section>
         {% endif %}
       {% endfor %}
       {% include footer.html %}
